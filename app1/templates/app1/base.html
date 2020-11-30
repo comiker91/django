@@ -19,6 +19,11 @@
 
         <p>Guten Morgen {{parameter.2}} {{parameter.0}}</p>
         <p>Interssant, dass es Ihnen {{parameter.1}} geht.</p>
+        <ul>
+        {% for zeile in tabelle %}
+          <li>{{zeile}}</li>
+        {% endfor %}
+        </ul>
       </div>
     </div>
   </div>
