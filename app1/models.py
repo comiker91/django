@@ -7,3 +7,4 @@ class Tagebuch(models.Model):
     zeitpunkt = models.DateTimeField(auto_now=False, auto_now_add=True)
     kommentar = models.TextField()
     bewertung = models.IntegerField()
+    
