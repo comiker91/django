@@ -10,6 +10,6 @@ def index(request):
     return render(request,template,{'parameter':tupel, 'tabelle': tabelle})
 
 def tgbDetail(request, comment_id):
-    template = 'app1/base.html'
+    template = 'app1/tgbdetails.html'
     print("Die ID war", comment_id)
     return render(request, template, {})
