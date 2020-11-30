@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 
 from .models import *
@@ -27,6 +27,8 @@ def tgbDetail(request, comment_id):
         ds.kommentar = kommentar
         # DS Speichern
         ds.save()
+        # Zur Liste zurückkehren
+        return redirect("")
     else:
         print("Da ist mächtig etwas schief gelaufen.")
     
