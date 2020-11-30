@@ -5,4 +5,5 @@ from django.http import HttpResponse
 def index(request):
     template = 'app1/base.html'
     name = "Hans Dampf"
-    return render(request,template,{'name':name,})
+    abc = "Gut"
+    return render(request,template,{'name':name,'abc':abc})
