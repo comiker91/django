@@ -19,6 +19,7 @@ def tgbDetail(request, comment_id):
         return render(request, template, {'ds':ds,})        
     elif request.method == "POST":
         print("Website wurde durch ein Formular aufgerufen")
+        print(request.POST)
         # Formular auslesen
         name = request.POST['tgbname']
         kommentar = request.POST['tgbkommentar']
