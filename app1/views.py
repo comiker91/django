@@ -10,9 +10,9 @@ def index(request):
     return render(request,template,{'parameter':tupel, 'tabelle': tabelle})
 
 def tgbDetail(request, comment_id):
+    # DS Lesen
     if request.method == "GET":
         print("Website wurde direkt aufgerufen")
-        # DS Lesen
         # Formular initialisieren
     elif request.method == "POST":
         print("Website wurde durch ein Formular aufgerufen")
