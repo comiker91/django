@@ -10,5 +10,5 @@ def index(request):
     return render(request,template,{'parameter':tupel, 'tabelle': tabelle})
 
 def tgbDetail(request, comment_id):
-    template = 'app1/tgbdetails.html'
+    template = 'app1/tgbdetail.html'
     return render(request, template, {})
