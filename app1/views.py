@@ -11,6 +11,7 @@ def index(request):
 
 def tgbDetail(request, comment_id):
     # DS Lesen
+    ds = Tagebuch.objects.get(id = comment_id)
     if request.method == "GET":
         print("Website wurde direkt aufgerufen")
         # Formular initialisieren
@@ -21,6 +22,5 @@ def tgbDetail(request, comment_id):
     else:
         print("Da ist mächtig etwas schief gelaufen.")
     
-    ds = Tagebuch.objects.get(id = comment_id)
     template = 'app1/tgbdetail.html'
     return render(request, template, {'ds':ds,})
