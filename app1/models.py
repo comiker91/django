@@ -9,3 +9,5 @@ class Tagebuch(models.Model):
     bewertung = models.IntegerField()
     def __str__(self):
         return self.name+", ("+str(self.bewertung)+"), "+self.kommentar
+    class Meta:
+        verbose_name_plural = "Tagebuch"
