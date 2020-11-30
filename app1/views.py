@@ -10,5 +10,6 @@ def index(request):
     return render(request,template,{'parameter':tupel, 'tabelle': tabelle})
 
 def tgbDetail(request, comment_id):
+    ds = Tagebuch.objects.get(id = comment_id)
     template = 'app1/tgbdetail.html'
-    return render(request, template, {})
+    return render(request, template, {'ds':ds})
