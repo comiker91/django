@@ -21,14 +21,14 @@ def tgbDetail(request, comment_id):
         print("Website wurde durch ein Formular aufgerufen")
         # Formular auslesen
         name = request.POST['tgbname']
-        kommentar = request.POST['tbgkommentar']
+        kommentar = request.POST['tgbkommentar']
         # DS ändern
         ds.name = name
         ds.kommentar = kommentar
         # DS Speichern
         ds.save()
         # Zur Liste zurückkehren
-        return redirect("")
+        return redirect("/")
     else:
         print("Da ist mächtig etwas schief gelaufen.")
     
