@@ -11,5 +11,4 @@ def index(request):
 
 def tgbDetail(request, comment_id):
     template = 'app1/tgbdetails.html'
-    print("Die ID war", comment_id)
     return render(request, template, {})
