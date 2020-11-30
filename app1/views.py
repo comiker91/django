@@ -10,6 +10,11 @@ def index(request):
     return render(request,template,{'parameter':tupel, 'tabelle': tabelle})
 
 def tgbDetail(request, comment_id):
+    if request.method == "GET":
+        print("Website wurde direkt aufgerufen")
+    elif request.method == "POST":
+        print("Website wurde durch ein Formular aufgerufen")
+    
     ds = Tagebuch.objects.get(id = comment_id)
     template = 'app1/tgbdetail.html'
     return render(request, template, {'ds':ds,})
