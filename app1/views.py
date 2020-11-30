@@ -8,3 +8,8 @@ def index(request):
     tupel = ("Hans Dampf","Gut","lieber")
     tabelle = Tagebuch.objects.all().order_by("-bewertung")
     return render(request,template,{'parameter':tupel, 'tabelle': tabelle})
+
+def tgbDetail(request, comment_id):
+    template = 'app1/base.html'
+    print("Die ID war", comment_id)
+    return render(request, template, {})
