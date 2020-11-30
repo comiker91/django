@@ -14,6 +14,8 @@ def tgbDetail(request, comment_id):
         print("Website wurde direkt aufgerufen")
     elif request.method == "POST":
         print("Website wurde durch ein Formular aufgerufen")
+    else:
+        print("Da ist mächtig etwas schief gelaufen.")
     
     ds = Tagebuch.objects.get(id = comment_id)
     template = 'app1/tgbdetail.html'
