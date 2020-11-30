@@ -12,4 +12,4 @@ def index(request):
 def tgbDetail(request, comment_id):
     ds = Tagebuch.objects.get(id = comment_id)
     template = 'app1/tgbdetail.html'
-    return render(request, template, {'ds':ds})
+    return render(request, template, {'ds':ds,})
