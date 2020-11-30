@@ -23,6 +23,8 @@ def tgbDetail(request, comment_id):
         name = request.POST['tgbname']
         kommentar = request.POST['tbgkommentar']
         # DS ändern
+        ds.name = name
+        ds.kommentar = kommentar
         # DS Speichern
     else:
         print("Da ist mächtig etwas schief gelaufen.")
