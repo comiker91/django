@@ -21,7 +21,7 @@
         <p>Interssant, dass es Ihnen {{parameter.1}} geht.</p>
         <ul>
         {% for zeile in tabelle %}
-          <li>{{zeile.zeitpunkt}}, {{zeile}}</li>
+          <li>{{zeile.zeitpunkt}}, {{zeile}} --> {{ zeile.id}}</li>
         {% endfor %}
         </ul>
       </div>
