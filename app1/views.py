@@ -26,6 +26,7 @@ def tgbDetail(request, comment_id):
         ds.name = name
         ds.kommentar = kommentar
         # DS Speichern
+        ds.save()
     else:
         print("Da ist mächtig etwas schief gelaufen.")
     
