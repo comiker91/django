@@ -10,6 +10,7 @@ Tagebuchdetails
 
 {% block content %}
 <form method="POST">
+{% csrf_token %}
   <div class="form-group">
     <label for="tgbName">Name</label>
     <input type="text" class="form-control" id="tgbName" aria-describedby="nameHelp" name="tgbname" value="{{ds.name}}">
