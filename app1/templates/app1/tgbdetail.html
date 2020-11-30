@@ -9,15 +9,15 @@ Tagebuchdetails
 {% endblock h1 %}
 
 {% block content %}
-<form>
+<form method="POST">
   <div class="form-group">
     <label for="tgbName">Name</label>
-    <input type="text" class="form-control" id="tgbName" aria-describedby="nameHelp" name="tgbname">
+    <input type="text" class="form-control" id="tgbName" aria-describedby="nameHelp" name="tgbname" value="{{ds.name}}">
     <small id="nameHelp" class="form-text text-muted">Eingegebener Name</small>
   </div>
   <div class="form-group">
     <label for="tbgKommentar">Password</label>
-    <input type="text" class="form-control" id="tbgKommentar" aria-describedby="kommentarHelp" name="tgbkommentar">
+    <input type="text" class="form-control" id="tbgKommentar" aria-describedby="kommentarHelp" name="tgbkommentar" value="{{ds.kommentar}}">
     <small id="kommentarHelp" class="form-text text-muted">abgegebener Kommentar</small>
   </div>
   <button type="submit" class="btn btn-primary">Speichern</button>
