@@ -13,13 +13,10 @@ def tgbDetail(request, comment_id):
     # DS Lesen
     ds = Tagebuch.objects.get(id = comment_id)
     if request.method == "GET":
-        print("Website wurde direkt aufgerufen")
         # Formular initialisieren
         template = 'app1/tgbdetail.html'
         return render(request, template, {'ds':ds,})        
     elif request.method == "POST":
-        print("Website wurde durch ein Formular aufgerufen")
-        print(request.POST)
         # Formular auslesen
         name = request.POST['tgbname']
         kommentar = request.POST['tgbkommentar']
