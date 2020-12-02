@@ -15,7 +15,7 @@ class Tagebuch(models.Model):
         verbose_name_plural = "Tagebuch"
 
 class Bewertung(models.Model):
-    slug = models.CharField(max_length=10, unique=True)
+    slug = models.CharField(max_length=20, unique=True)
     beschreibung = models.CharField(max_length=50)
     wert = models.IntegerField()
     def __str__(self):
