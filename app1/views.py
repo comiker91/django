@@ -42,5 +42,10 @@ def tgbNeu(request):
         kommentar = request.POST['tgbkommentar']
         bewertung = request.POST['tgbbewertung']
         button = request.POST['button']
-        print(name,kommentar,bewertung,button)
-        return redirect("/")
+        if button == "save":
+            tabelleBewertung = Tagebuch.objects.all().order_by("-bewertung")
+        if button == "cancel":
+            print(name,kommentar,bewertung,button)
+            return redirect("/")
+        elif button == "delete":
+            return render(request, 'app1/tgbneu.html')
