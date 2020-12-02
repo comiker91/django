@@ -12,17 +12,21 @@ def index(request):
 def tgbDetail(request, comment_id):
     # DS Lesen
     ds = Tagebuch.objects.get(id = comment_id)
+    tabelleBewertung = Bewertung.objects.all().order_by("wert")
     if request.method == "GET":
         # Formular initialisieren
         template = 'app1/tgbdetail.html'
-        return render(request, template, {'ds':ds,})        
+        return render(request, template, {'ds':ds,'tabbew': tabelleBewertung})        
     elif request.method == "POST":
         # Formular auslesen
         name = request.POST['tgbname']
         kommentar = request.POST['tgbkommentar']
+        bewertung = request.POST['tgbbewertung']
         # DS ändern
+        bewertungDS = Bewertung.objects.get(slug=bewertung)
         ds.name = name
         ds.kommentar = kommentar
+        ds.bewertung = bewertungDS
         # DS Speichern
         ds.save()
         # Zur Liste zurückkehren
@@ -52,3 +56,4 @@ def tgbNeu(request):
             tabelleBewertung = Bewertung.objects.all().order_by("wert")
             template = 'app1/tgbneu.html'
             return render(request, template, {"tabbew":tabelleBewertung})
+        

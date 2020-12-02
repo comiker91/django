@@ -21,6 +21,15 @@ Tagebuchdetails
     <input type="text" class="form-control" id="tbgKommentar" aria-describedby="kommentarHelp" name="tgbkommentar" value="{{ds.kommentar}}">
     <small id="kommentarHelp" class="form-text text-muted">abgegebener Kommentar</small>
   </div>
+  <div class="form-group">
+    <label for="tbgBewertung">Bewertung</label>
+    <select name="tgbbewertung" id="tgbBewertung">
+        {% for zeile in tabbew %}
+        <option value="{{zeile.slug}}">{{zeile.beschreibung}}</option>
+        {% endfor %}
+    </select>
+    <small id="BewertungHelp" class="form-text text-muted">Aktuelle Bewertung {{ds.bewertung}}</small>
+  </div>
   <button type="submit" class="btn btn-primary">Speichern</button>
 </form>
 {% endblock content %}
