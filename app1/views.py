@@ -33,3 +33,8 @@ def tgbDetail(request, comment_id):
     else:
         print("Da ist mächtig etwas schief gelaufen.")
     
+def tgbNeu(request):
+    if request.method == "GET":
+        template = 'app1/tgbneu.html'
+        return render(request, template, {})
+        
