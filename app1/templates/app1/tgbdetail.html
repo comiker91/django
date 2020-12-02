@@ -30,7 +30,11 @@ Tagebuchdetails
     </select>
     <small id="BewertungHelp" class="form-text text-muted">Aktuelle Bewertung {{ds.bewertung}}</small>
   </div>
-  <button type="submit" class="btn btn-primary">Speichern</button>
+  <button type="submit" class="btn btn-primary" name ="button" value="save">Speichern</button>
+  <button type="submit" class="btn btn-warning" name="button" value="delete">Löschen</button>
+  <button type="submit" class="btn btn-danger" name="button"value="cancel">Abbruch</button>
+  <button type="submit" class="btn btn-danger" name="button"value="clear">Entfernen</button>
+
 </form>
 {% endblock content %}
 

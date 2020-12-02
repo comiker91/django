@@ -17,22 +17,35 @@ def tgbDetail(request, comment_id):
         # Formular initialisieren
         template = 'app1/tgbdetail.html'
         return render(request, template, {'ds':ds,'tabbew': tabelleBewertung})        
-    elif request.method == "POST":
-        # Formular auslesen
-        name = request.POST['tgbname']
-        kommentar = request.POST['tgbkommentar']
-        bewertung = request.POST['tgbbewertung']
-        # DS ändern
-        bewertungDS = Bewertung.objects.get(slug=bewertung)
-        ds.name = name
-        ds.kommentar = kommentar
-        ds.bewertung = bewertungDS
-        # DS Speichern
-        ds.save()
-        # Zur Liste zurückkehren
-        return redirect("/")
     else:
-        print("Da ist mächtig etwas schief gelaufen.")
+        
+        button = request.POST['button']
+        if button == "save":
+            # Formular auslesen 
+            name = request.POST['tgbname']
+            kommentar = request.POST['tgbkommentar']
+            bewertung = request.POST['tgbbewertung']
+            # DS ändern
+            bewertungDS = Bewertung.objects.get(slug=bewertung)
+            ds.name = name
+            ds.kommentar = kommentar
+            ds.bewertung = bewertungDS
+            # DS Speichern
+            ds.save()
+            # Zur Liste zurückkehren
+            return redirect("/")
+        elif button == "cancel":
+            return redirect("/")
+        elif button == "delete":
+            ds = Tagebuch.objects.get(id = comment_id)
+            tabelleBewertung = Bewertung.objects.all().order_by("wert")
+            template = 'app1/tgbdetail.html'
+            return render(request, template, {'ds':ds,'tabbew': tabelleBewertung})        
+          
+        elif button == "clear":
+            Tagebuch.objects.filter(id = comment_id).delete()
+            return redirect("/")
+
     
 def tgbNeu(request):
     if request.method == "GET":
