@@ -23,7 +23,7 @@ Tagebuchdetails
   </div>
   <div class="form-group">
     <label for="tbgBewertung">Bewertung</label>
-    <select name="tgbbewertung" id="tgbBewertung" size="5">
+    <select name="tgbbewertung" id="tgbBewertung">
       <option>Sehr Gut</option>
       <option>Gut</option>
       <option>Befriedigend</option>
@@ -33,8 +33,9 @@ Tagebuchdetails
     </select>
     <small id="BewertungHelp" class="form-text text-muted">Bitte eine Bewertung eingeben</small>
   </div>
-  <button type="submit" class="btn btn-primary">Speichern</button>
-  <button type="submit" class="btn btn-danger">Abbruch</button>
+  <button type="submit" class="btn btn-primary" name ="button">Speichern</button>
+  <button type="submit" class="btn btn-warning" name="loeschen" >Löschen</button>
+  <button type="submit" class="btn btn-danger" name="Abbruch">Abbruch</button>
 </form>
 {% endblock content %}
 

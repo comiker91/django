@@ -37,4 +37,10 @@ def tgbNeu(request):
     if request.method == "GET":
         template = 'app1/tgbneu.html'
         return render(request, template, {})
-        
+    else:
+        name = request.POST['tgbname']
+        kommentar = request.POST['tgbkommentar']
+        bewertung = request.POST['tgbbewertung']
+        button = request.POST['button']
+        print(name,kommentar,bewertung,button)
+        return redirect("/")
