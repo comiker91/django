@@ -1,0 +1,28 @@
+{% extends 'app1/base.html' %}
+
+{% block titel %} 
+Detailansicht Tagebuch 
+{% endblock titel %} 
+
+{% block h1 %}
+Tagebuchdetails
+{% endblock h1 %}
+
+{% block content %}
+<form method="POST" action="">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="tgbName">Name</label>
+    <input type="text" class="form-control" id="tgbName" aria-describedby="nameHelp" name="tgbname" value="{{ds.name}}">
+    <small id="nameHelp" class="form-text text-muted">Eingegebener Name</small>
+  </div>
+  <div class="form-group">
+    <label for="tbgKommentar">Kommentar</label>
+    <input type="text" class="form-control" id="tbgKommentar" aria-describedby="kommentarHelp" name="tgbkommentar" value="{{ds.kommentar}}">
+    <small id="kommentarHelp" class="form-text text-muted">abgegebener Kommentar</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Speichern</button>
+</form>
+{% endblock content %}
+
+
