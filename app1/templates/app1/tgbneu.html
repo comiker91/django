@@ -24,12 +24,9 @@ Tagebuchdetails
   <div class="form-group">
     <label for="tbgBewertung">Bewertung</label>
     <select name="tgbbewertung" id="tgbBewertung">
-      <option>Sehr Gut</option>
-      <option>Gut</option>
-      <option>Befriedigend</option>
-      <option>Ausreichend</option>
-      <option>Ungenügend</option>
-      <option>Mangelhaft</option>
+        {% for zeile in tabbew %}
+        <option value="{{zeile.slug}}">{{zeile.beschreibung}}</option>
+        {% endfor %}
     </select>
     <small id="BewertungHelp" class="form-text text-muted">Bitte eine Bewertung eingeben</small>
   </div>

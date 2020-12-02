@@ -35,8 +35,9 @@ def tgbDetail(request, comment_id):
     
 def tgbNeu(request):
     if request.method == "GET":
+        tabelleBewertung = Bewertung.objects.all().order_by("bewertung")
         template = 'app1/tgbneu.html'
-        return render(request, template, {})
+        return render(request, template, {"tabbew":tabelleBewertung})
     else:
         name = request.POST['tgbname']
         kommentar = request.POST['tgbkommentar']
@@ -44,6 +45,8 @@ def tgbNeu(request):
         button = request.POST['button']
         if button == "save":
             tabelleBewertung = Tagebuch.objects.all().order_by("-bewertung")
+            template = 'app1/tgbneu.html'
+            return render(request, 'app1/tgbneu.html')
         if button == "cancel":
             print(name,kommentar,bewertung,button)
             return redirect("/")
