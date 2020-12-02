@@ -35,7 +35,7 @@ def tgbDetail(request, comment_id):
     
 def tgbNeu(request):
     if request.method == "GET":
-        tabelleBewertung = Bewertung.objects.all().order_by("bewertung")
+        tabelleBewertung = Bewertung.objects.all().order_by("wert")
         template = 'app1/tgbneu.html'
         return render(request, template, {"tabbew":tabelleBewertung})
     else:
