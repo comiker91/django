@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.fields import IntegerField
+from django.db.models.lookups import Exact
 
 # Create your models here.
 
@@ -11,3 +13,12 @@ class Tagebuch(models.Model):
         return self.name+", ("+str(self.bewertung)+"), "+self.kommentar
     class Meta:
         verbose_name_plural = "Tagebuch"
+
+class Bewertung(models.Model):
+    slug = models.CharField(max_length=10, unique=True)
+    beschreibung = models.CharField(max_length=50)
+    wert = models.IntegerField()
+    def __str__(self):
+        return "("+str(self.wert)+") "+self.slug
+    class Meta:
+        verbose_name_plural = "Bewertung"
