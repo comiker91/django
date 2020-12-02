@@ -21,7 +21,8 @@
         <p>Guten Morgen {{parameter.2}} {{parameter.0}}</p>
         <p>Interssant, dass es Ihnen {{parameter.1}} geht.</p>
         <ul>
-          <li><a href="/tagebuchdetail/neu">Neuer Eintrag</a></li>
+          <li><a href="/tagebuchdetail/neu">Neuer Tagebuch Eintrag</a></li>
+          <li><a href="/bewertung/neu">Neue Bewertung</a></li>
         {% for zeile in tabelle %}
           <li><a href="/tagebuchdetail/{{zeile.id}}">{{zeile.zeitpunkt}}, {{zeile}} --> {{ zeile.id}}</a></li>
         {% endfor %}

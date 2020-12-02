@@ -56,4 +56,26 @@ def tgbNeu(request):
             tabelleBewertung = Bewertung.objects.all().order_by("wert")
             template = 'app1/tgbneu.html'
             return render(request, template, {"tabbew":tabelleBewertung})
+
+def kommineu(request):
+    if request.method == "GET":
+        tabelleBewertung = Bewertung.objects.all().order_by("wert")
+        template = 'app1/bewertungeneu.html'
+        return render(request, template, {"tabbew":tabelleBewertung})
+    else:
+        button = request.POST['button']
+        if button == "save":
+            slug = request.POST['bewertungname']
+            beschreibung = request.POST['bkommentar']
+            wert = int(request.POST['wert'])
+            ds = Bewertung(slug=slug, beschreibung=beschreibung,wert=wert)
+            ds.save()
+            return redirect("/")
+        elif button == "cancel":
+            return redirect("/")
+        elif button == "delete":
+            tabelleBewertung = Bewertung.objects.all().order_by("wert")
+            template = 'app1/bewertungeneu.html'
+            return render(request, template, {"tabbew":tabelleBewertung})        
+
         
